@@ -1,0 +1,21 @@
+====
+projet S4
+=====
+Lien site
+---------
+https://projet-s4.123mada.com
+
+
+FTP
+---
+url: ftp.123mada.com
+user: projet-s4@123mada.com
+pwd : Q-F8-@y[RiI.
+
+
+PHPMYADMIN
+----------
+https://projet-s4.123mada.com/my6347
+bdd: madaebvx_projet_s4
+user: madaebvx_projet_s4
+pwd: K$1$$BbHU]VW
