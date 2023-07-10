@@ -78,6 +78,7 @@ CREATE table Code
     Code VARCHAR(50),
     Montant Integer
 );
+
 CREATE table VerifCode
 (
     idVerifCode Integer PRIMARY KEY NOT NULL auto_increment,
@@ -85,6 +86,17 @@ CREATE table VerifCode
     idUser Integer,
     Foreign KEY (idCode) REFERENCES Code(idCode),
     Foreign KEY (idUser) REFERENCES User(idUser)
+);
+
+CREATE table Suggestion
+(
+    idSuggestion Integer PRIMARY KEY NOT NULL auto_increment,
+    idRegime Integer,
+    idActivite Integer,
+    idUser Integer,
+    Foreign KEY (idRegime) REFERENCES Regime(idRegime),
+    Foreign KEY (idActivite) REFERENCES Activite(idActivite),
+    Foreign KEY (idActivite) REFERENCES Activite(idActivite)
 );
 
 INSERT INTO User (idUser,NomUser,Prenom,Email,Mdp,isAdmin) VALUES 
@@ -99,7 +111,7 @@ INSERT INTO User (idUser,NomUser,Prenom,Email,Mdp,isAdmin) VALUES
 
 INSERT INTO Objectif (idObjectif,TypeObjectif) VALUES 
 (1,"Augmenter Poids"),
-(2,"Reduire Poids")
+(2,"Reduire Poids");
 
 INSERT INTO InfoUser (idInfo,idUser,Genre,Taille,PoidsInit,PoidsObj,idObjectif) VALUES 
 (1,4,"Masculin",175,70.0,80.0,1),
