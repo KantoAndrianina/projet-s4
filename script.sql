@@ -54,7 +54,7 @@ VALUES
     (7,"Feminin",165,90.5,70.0,2),
     (8,"Feminin",170,70.0,80.5,1);
 
-CREATE table PLat
+CREATE table Plat
 (
     idPlat Integer PRIMARY KEY NOT NULL auto_increment,
     Nomplat VARCHAR(50),
@@ -62,7 +62,7 @@ CREATE table PLat
     ImgPlat VARCHAR(50)
 );
 
-INSERT INTO PLat (Nomplat,PrixUnitaire,ImgPlat) 
+INSERT INTO Plat (Nomplat,PrixUnitaire,ImgPlat) 
 VALUES 
     ("Pate",20000,"Pate.jpg"),
     ("Frite",10000,"Frite.jpg"),
