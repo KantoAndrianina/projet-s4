@@ -7,7 +7,8 @@ CREATE table User
     NomUser VARCHAR(50),
     Prenom VARCHAR(50),
     Email VARCHAR(50),
-    Mdp VARCHAR(50)
+    Mdp VARCHAR(50),
+    isAdmin Integer
 
 );
 CREATE table InfoUser
@@ -82,7 +83,6 @@ CREATE table VerifCode
     Foreign KEY (idCode) REFERENCES Code(idCode),
     Foreign KEY (idUser) REFERENCES User(idUser)
 );
-
 
 
 
