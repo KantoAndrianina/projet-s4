@@ -22,5 +22,11 @@ class Admin extends CI_Controller
         $data['content'] = 'pages/admin';
 		$this->load->view('index',$data);
 	}
+	public function crud_plat()
+	{
+		$data = array();
+        $data['content'] = 'crud/ajout_plats';
+		$this->load->view('index',$data);
+	}
     
 }
