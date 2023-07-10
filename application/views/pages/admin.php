@@ -101,7 +101,7 @@
               </a>
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="#">Plat</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>index.php/admin/crud_plat">Plat</a></li>
                   <li class="nav-item"> <a class="nav-link" href="#">Menu</a></li>
                   <li class="nav-item"> <a class="nav-link" href="#">Régime</a></li>
                   <li class="nav-item"> <a class="nav-link" href="#">Activité</a></li>
