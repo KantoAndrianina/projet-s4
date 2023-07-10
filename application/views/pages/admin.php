@@ -54,7 +54,7 @@
                 </div>
               </a>
               <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="<?php echo base_url(); ?>index.php/welcome/index">
                   <i class="mdi mdi-logout me-2 text-primary"></i> Signout </a>
               </div>
             </li>
@@ -176,13 +176,17 @@
                           </tr>
                         </thead>
                         <tbody>
+                        <?php if(isset($listeInfoUser))
+                            {
+                            foreach ($listeInfoUser as $infoUser) { ?>
                           <tr>
-                            <td> Bertha BENZ </td>
-                            <td> Féminin </td>
-                            <td> 1m67 </td>
-                            <td> 60 KG </td>
-                            <td> 65 KG </td>
+                            <td> <?php echo $infoUser['Prenom']?> <?php echo $infoUser['NomUser']?> </td>
+                            <td> <?php echo $infoUser['Genre']?> </td>
+                            <td> <?php echo $infoUser['Taille']?> cm</td>
+                            <td> <?php echo $infoUser['PoidsObj']?> KG </td>
+                            <td> <?php echo $infoUser['idObjectif']?> KG </td>
                           </tr>
+                          <?php }}?>
                         </tbody>
                       </table>
                     </div>

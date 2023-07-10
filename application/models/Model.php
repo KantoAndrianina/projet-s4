@@ -30,7 +30,7 @@
            
             return $valiny;
         }
-        
+
         public function getAdmin()
         {
             $sql = "select * from User where isAdmin = 1";
@@ -49,10 +49,13 @@
         {
             $admin=$this->Model->getAdmin();
             $valiny = false;
-                if($mail == $admin[0]['Email'])
+            for ($i=0;$i<count($admin);$i++){
+                if($mail == $admin[$i]['Email'])
                 {
                     $valiny = true;
                 }
+            }
+
            
             return $valiny;
         }

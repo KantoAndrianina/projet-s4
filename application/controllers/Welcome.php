@@ -27,8 +27,34 @@ class Welcome extends CI_Controller {
 	
 	public function index()
 	{
-        $data['content'] = 'pages/accueil';
+        $data['content'] = 'pages/login';
 		$this->load->view('index',$data);
 		
+	}
+
+	public function login()
+	{
+		$mail = $this->input->post("email");
+		$pass = $this->input->post("password");
+		// var_dump($mail);
+		// var_dump($pass);
+
+		$this->load->model('Model');
+		// var_dump($this->Model->checkLogin($mail,$pass));
+
+		if($this->Model->checkLogin($mail,$pass))
+		{
+			// $this->session->set_userdata('Email', $mail);
+			// $_SESSION['Email']=$mail;
+			if($this->Model->checkAdmin($mail))
+			{
+				$url=base_url().'index.php/admin/index';
+				redirect($url);
+			}else{
+				$url=base_url().'index.php/user/index';
+				redirect($url);
+			}
+			
+		}
 	}
 }

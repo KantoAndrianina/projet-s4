@@ -1,45 +1,66 @@
-<section class="vh-100">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-6 text-black">
-
-        <div class="px-5 ms-xl-4">
-          <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #709085;"></i>
-          <span class="h1 fw-bold mb-0">Logo</span>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Purple Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css-admin/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css-admin/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css-admin/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/css-admin/images/favicon.ico" />
+  </head>
+  <body>
+    <div class="container-scroller">
+      <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="content-wrapper d-flex align-items-center auth">
+          <div class="row flex-grow">
+            <div class="col-lg-4 mx-auto">
+              <div class="auth-form-light text-left p-5">
+                <div class="brand-logo">
+                  <img src="<?php echo base_url(); ?>assets/css-admin/images/logo.svg">
+                </div>
+                <h4>Hello! let's get started</h4>
+                <h6 class="font-weight-light">Sign in to continue.</h6>
+                <form method="post" class="pt-3" action="<?php echo base_url();?>index.php/welcome/login">
+                  <div class="form-group">
+                    <input type="email" class="form-control form-control-lg" name="email" id="email" placeholder="E-mail">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control form-control-lg" name="password" id="password" placeholder="Password">
+                  </div>
+                  <div class="mt-3">
+                    <input type="submit" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" value="SIGN IN">
+                  </div>
+                  <div class="text-center mt-4 font-weight-light"> Don't have an account? <a href="#" class="text-primary">Create</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
-
-          <form style="width: 23rem;">
-
-            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>
-
-            <div class="form-outline mb-4">
-              <input type="email" id="form2Example18" class="form-control form-control-lg" />
-              <label class="form-label" for="form2Example18">Email address</label>
-            </div>
-
-            <div class="form-outline mb-4">
-              <input type="password" id="form2Example28" class="form-control form-control-lg" />
-              <label class="form-label" for="form2Example28">Password</label>
-            </div>
-
-            <div class="pt-1 mb-4">
-              <button class="btn btn-info btn-lg btn-block" type="button">Login</button>
-            </div>
-
-            <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
-            <p>Don't have an account? <a href="#!" class="link-info">Register here</a></p>
-
-          </form>
-
-        </div>
-
+        <!-- content-wrapper ends -->
       </div>
-      <div class="col-sm-6 px-0 d-none d-sm-block">
-        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp"
-          alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
-      </div>
+      <!-- page-body-wrapper ends -->
     </div>
-  </div>
-</section>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="<?php echo base_url(); ?>assets/css-admin/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="<?php echo base_url(); ?>assets/css-admin/js/off-canvas.js"></script>
+    <script src="<?php echo base_url(); ?>assets/css-admin/js/hoverable-collapse.js"></script>
+    <script src="<?php echo base_url(); ?>assets/css-admin/js/misc.js"></script>
+    <!-- endinject -->
+  </body>
+</html>

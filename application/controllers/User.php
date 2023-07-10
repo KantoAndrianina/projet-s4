@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin extends CI_Controller 
+class User extends CI_Controller 
 {
     public function __construct()
     {
@@ -18,8 +18,7 @@ class Admin extends CI_Controller
     public function index()
 	{
 		$data = array();
-        $data['listeInfoUser'] = $this->Model->getAllInfoUser();
-        $data['content'] = 'pages/admin';
+        $data['content'] = 'pages/user';
 		$this->load->view('index',$data);
 	}
     
