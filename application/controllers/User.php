@@ -21,5 +21,11 @@ class User extends CI_Controller
         $data['content'] = 'pages/user';
 		$this->load->view('index',$data);
 	}
+    public function porte_monnaie()
+	{
+		$data = array();
+        $data['content'] = 'pages/porte_monnaie';
+		$this->load->view('index',$data);
+	}
     
 }

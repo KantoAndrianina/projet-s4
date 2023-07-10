@@ -110,77 +110,27 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
-            <div class="page-header">
-              <h3 class="page-title"> Objectif </h3>
-            </div>
-            <div class="row">
-              <div class="col-md-12 grid-margin">
-                <div class="card">
+             <div class="row">
+              <div class="col-md-4 stretch-card grid-margin">
+                <div class="card bg-gradient-info card-img-holder text-white">
                   <div class="card-body">
-                    <h4 class="card-title">Objectif : Augmenter le poids</h4>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <p>Poids actuel : ... KG</p>
-                        <p>Poids goal : ... KG</p>
-                      </div>
-                    </div>
+                    <img src="<?php echo base_url(); ?>assets/css-admin/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">Montant dans votre porte-monnaie <i class="mdi mdi-coin mdi-24px float-right"></i>
+                    </h4>
+                    <h2 class="mb-5">350 000 Ar</h2>
                   </div>
                 </div>
               </div>
+             
+            
             </div>
-
-            <div class="page-header">
-              <h3 class="page-title"> Suggestions </h3>
-            </div>
-            <div class="row">
-              <div class="col-md-12 grid-margin">
-                <div class="card">
-                  <div class="card-body">
-                  <table class="table table-hover">
-                      <thead>
-                        <tr>
-                          <th>Regime</th>
-                          <th>Description</th>
-                          <th>Duree</th>
-                          <th>Intervalle Poids</th>
-                          <th>Prix</th>
-                          <th> </th>
-                          <th> </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Regime 1</td>
-                          <td>...</td>
-                          <td>15 jours</td>
-                          <td class="text-success"> Entre 3 et 5 KG <i class="mdi mdi-arrow-up"></i></td>
-                          <td>140 000 Ar</td>
-                          <td><a class="badge badge-warning" href="#">details</a></td>
-                          <td><a class="badge badge-info" href="#">choisir</a></td>
-
-                        </tr>
-                        <tr>
-                          <td>Regime 2</td>
-                          <td>...</td>
-                          <td>15 jours</td>
-                          <td class="text-danger"> Entre 2 et 4 KG <i class="mdi mdi-arrow-down"></i></td>
-                          <td>40 000 Ar</td>
-                          <td><a class="badge badge-warning" href="#">details</a></td>
-                          <td><a class="badge badge-info" href="#">choisir</a></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
+          
+            
           </div>
           <!-- content-wrapper ends -->
-          <!-- partial:../../partials/_footer.html -->
+          <!-- partial:partials/_footer.html -->
           <footer class="footer">
             <div class="container-fluid d-flex justify-content-between">
-              <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Copyright © bootstrapdash.com 2021</span>
-              <span class="float-none float-sm-end mt-1 mt-sm-0 text-end"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin template</a> from Bootstrapdash.com</span>
             </div>
           </footer>
           <!-- partial -->
