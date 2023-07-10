@@ -50,7 +50,7 @@
                   <span class="availability-status online"></span>
                 </div>
                 <div class="nav-profile-text">
-                  <p class="mb-1 text-black">Kanto Rabenanahary</p>
+                  <p class="mb-1 text-black">Bertha Benz</p>
                 </div>
               </a>
               <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
@@ -82,8 +82,8 @@
                   <!--change to offline or busy as needed-->
                 </div>
                 <div class="nav-profile-text d-flex flex-column">
-                  <span class="font-weight-bold mb-2">Kanto Rabenanahary</span>
-                  <span class="text-secondary text-small">Project Admin</span>
+                  <span class="font-weight-bold mb-2">Bertha Benz</span>
+                  <span class="text-secondary text-small">User</span>
                 </div>
               </a>
             </li>
@@ -94,33 +94,17 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <span class="menu-title">CRUD</span>
-                <i class="menu-arrow"></i>
-                <i class="mdi mdi-brightness-5 menu-icon"></i>
+              <a class="nav-link" href="#">
+                <span class="menu-title">Change purse</span>
+                <i class="mdi mdi-coin menu-icon"></i>
               </a>
-              <div class="collapse" id="ui-basic">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="#">Plat</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="#">Menu</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="#">Régime</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="#">Activité</a></li>
-                </ul>
-              </div>
             </li>
           </ul>
         </nav>
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
-            <div class="page-header">
-              <h3 class="page-title">
-                <span class="page-title-icon bg-gradient-primary text-white me-2">
-                  <i class="mdi mdi-home"></i>
-                </span> Dashboard
-              </h3>
-            </div>
-            <div class="row">
+             <div class="row">
               <div class="col-md-4 stretch-card grid-margin">
                 <div class="card bg-gradient-danger card-img-holder text-white">
                   <div class="card-body">
