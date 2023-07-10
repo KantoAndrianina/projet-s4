@@ -156,6 +156,11 @@ INSERT INTO Code (idCode,Code,Montant) VALUES
 (14,"Code14",120000),
 (15,"Code15",150000);
 
+create or replace view v_user_infoUser as(
+select u.idUser , u.NomUser , u.Prenom, i.Genre,i.Taille, i.PoidsInit, i.PoidsObj,i.idObjectif
+from User u
+JOIN InfoUser i on i.idUser=u.idUser 
+);
 
 
 
