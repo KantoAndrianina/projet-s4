@@ -93,6 +93,21 @@
                 <i class="mdi mdi-home menu-icon"></i>
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <span class="menu-title">CRUD</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-brightness-5 menu-icon"></i>
+              </a>
+              <div class="collapse" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="#">Plat</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="#">Menu</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="#">Régime</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="#">Activité</a></li>
+                </ul>
+              </div>
+            </li>
           </ul>
         </nav>
         <!-- partial -->
