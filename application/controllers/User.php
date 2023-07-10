@@ -27,5 +27,10 @@ class User extends CI_Controller
         $data['content'] = 'pages/porte_monnaie';
 		$this->load->view('index',$data);
 	}
-    
+    public function detail_sugg()
+	{
+		$data = array();
+        $data['content'] = 'pages/detail_suggestion';
+		$this->load->view('index',$data);
+	}
 }

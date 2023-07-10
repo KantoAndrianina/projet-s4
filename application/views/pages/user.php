@@ -111,13 +111,12 @@
         <div class="main-panel">
           <div class="content-wrapper">
             <div class="page-header">
-              <h3 class="page-title"> Objectif </h3>
+              <h3 class="page-title"> Objectif : Augmenter le poids</h3>
             </div>
             <div class="row">
               <div class="col-md-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Objectif : Augmenter le poids</h4>
                     <div class="row">
                       <div class="col-md-6">
                         <p>Poids actuel : ... KG</p>
@@ -155,7 +154,7 @@
                           <td>15 jours</td>
                           <td class="text-success"> Entre 3 et 5 KG <i class="mdi mdi-arrow-up"></i></td>
                           <td>140 000 Ar</td>
-                          <td><a class="badge badge-warning" href="#">details</a></td>
+                          <td><a class="badge badge-warning" href="<?php echo base_url(); ?>index.php/user/detail_sugg">details</a></td>
                           <td><a class="badge badge-info" href="#">choisir</a></td>
 
                         </tr>
@@ -165,7 +164,7 @@
                           <td>15 jours</td>
                           <td class="text-danger"> Entre 2 et 4 KG <i class="mdi mdi-arrow-down"></i></td>
                           <td>40 000 Ar</td>
-                          <td><a class="badge badge-warning" href="#">details</a></td>
+                          <td><a class="badge badge-warning" href="<?php echo base_url(); ?>index.php/user/detail_sugg">details</a></td>
                           <td><a class="badge badge-info" href="#">choisir</a></td>
                         </tr>
                       </tbody>
