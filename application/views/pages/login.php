@@ -32,10 +32,12 @@
                 <h6 class="font-weight-light">Sign in to continue.</h6>
                 <form method="post" class="pt-3" action="<?php echo base_url();?>index.php/welcome/login">
                   <div class="form-group">
-                    <input type="email" class="form-control form-control-lg" name="email" id="email" placeholder="E-mail">
+                    <input type="email" class="form-control form-control-lg" name="email" id="email" placeholder="E-mail" value="jack@gmail.com">
+                    admin user : kanto@gmail.com
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control form-control-lg" name="password" id="password" placeholder="Password">
+                    <input type="password" class="form-control form-control-lg" name="password" id="password" placeholder="Password" value="333">
+                    admin mdp : 123
                   </div>
                   <div class="mt-3">
                     <input type="submit" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" value="SIGN IN">
