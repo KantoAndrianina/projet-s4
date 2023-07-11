@@ -553,7 +553,7 @@
                           <td><?php echo $info['PoidsFin']?></td>
                           <td><?php echo $info['NomActivite']?></td>
                           <td><?php echo $info['idObjectif']?></td>
-                          <td><a class="badge badge-warning" href="<?php echo base_url(); ?>index.php/admin/modifier_plat?idPlat=<?php echo $info['idActivite']?>">Modifier</a></td>
+                          <td><a class="badge badge-warning" href="<?php echo base_url(); ?>index.php/admin/modifier_activite?idActivite=<?php echo $info['idActivite']?>">Modifier</a></td>
                           <td><a class="badge badge-danger" href="<?php echo base_url(); ?>index.php/admin/detail_sugg">Supprimer</a></td>
                         </tr>
                         <?php }} ?>
@@ -594,7 +594,7 @@
                           <td><?php echo $info['DescriRegime']?></td>
                           <td><?php echo $info['PoidsDeb']?></td>
                           <td><?php echo $info['PoidsFin']?></td>
-                          <td><a class="badge badge-warning" href="<?php echo base_url(); ?>index.php/admin/modifier_plat?idPlat=<?php echo $info['idRegime']?>">Modifier</a></td>
+                          <td><a class="badge badge-warning" href="<?php echo base_url(); ?>index.php/admin/modifier_regime?idRegime=<?php echo $info['idRegime']?>">Modifier</a></td>
                           <td><a class="badge badge-danger" href="<?php echo base_url(); ?>index.php/admin/detail_sugg">Supprimer</a></td>
                         </tr>
                         <?php }} ?>

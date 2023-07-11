@@ -196,10 +196,16 @@
         }
 
         //insert Activite
-        public function insertActivite($idActivite, $DescriActivite, $Duree,$PoidsDeb,$PoidsFin,$NomActivite,$idObjectif)
+        public function insertPlat($Nomplat, $typePlat,$PrixUnitaire,$ImgPlat)
         {
-            $sql = "insert into Activite (idActivite, DescriActivite, Duree,PoidsDeb,PoidsFin,NomActivite,idObjectif) values (%s,'%s',%s,%s,%s,'%s',%s)";
-            $sql = sprintf($sql, $this->db->escape($idActivite),$this->db->escape($DescriActivite),$this->db->escape($Duree),$this->db->escape($PoidsDeb),$this->db->escape($PoidsFin),$this->db->escape($NomActivite),$this->db->escape($idObjectif));
+            $sql = "insert into Plat (Nomplat, typePlat,PrixUnitaire,ImgPlat) values ('%s', '%s', %s, '%s')";
+            $sql = sprintf($sql,$Nomplat, $typePlat,$PrixUnitaire,$ImgPlat);
+            $query = $this->db->query($sql);
+        }
+        public function insertActivite($DescriActivite, $Duree,$PoidsDeb,$PoidsFin,$NomActivite,$idObjectif)
+        {
+            $sql = "insert into Activite (DescriActivite, Duree,PoidsDeb,PoidsFin,NomActivite,idObjectif) values ('%s', %s, %s, %s, '%s', %s)";
+            $sql = sprintf($sql,$DescriActivite,$Duree,$PoidsDeb,$PoidsFin,$NomActivite,$idObjectif);
             $query = $this->db->query($sql);
 
         }
@@ -207,7 +213,7 @@
         public function updatePlat($Nomplat, $PrixUnitaire, $ImgPlat,$idPlat)
         {
             $sql = "update Plat set Nomplat = '%s', PrixUnitaire = %s, ImgPlat= '%s', where idPlat = %s";
-            $sql = sprintf($sql, $this->db->escape($Nomplat),$this->db->escape($PrixUnitaire),$this->db->escape($ImgPlat),$this->db->escape($idPlat));
+            $sql = sprintf($sql, $Nomplat,$PrixUnitaire,$ImgPlat,$idPlat);
             $query = $this->db->query($sql);
 
         }
@@ -215,7 +221,7 @@
         public function updateRegime($idObjectif, $DescriRegime, $Durée,$PoidsDeb,$PoidsFin,$idPlat,$idRegime)
         {
             $sql = "update Regime set idObjectif = %s, DescriRegime = '%s', Durée= %s, PoidsDeb= %s, PoidsFin= %s, idPlat= %s ,where idRegime = %s";
-            $sql = sprintf($sql, $this->db->escape($idObjectif),$this->db->escape($DescriRegime),$this->db->escape($Durée),$this->db->escape($PoidsDeb),$this->db->escape($PoidsFin),$this->db->escape($idPlat),$this->db->escape($idRegime));
+            $sql = sprintf($sql, $idObjectif,$DescriRegime,$Durée,$PoidsDeb,$PoidsFin,$idPlat,$idRegime);
             $query = $this->db->query($sql);
 
         }
@@ -223,7 +229,7 @@
         public function updateActivite($DescriActivite, $Duree,$PoidsDeb,$PoidsFin,$NomActivite,$idObjectif,$idActivite)
         {
             $sql = "update Activite set DescriActivite = '%s', Duree = %s, PoidsDeb= %s, PoidsFin= %s, NomActivite= '%s' , idObjectif = %s ,where idActivite = %s";
-            $sql = sprintf($sql, $this->db->escape($DescriActivite),$this->db->escape($Duree),$this->db->escape($PoidsDeb),$this->db->escape($PoidsFin),$this->db->escape($NomActivite),$this->db->escape($idObjectif),$this->db->escape($idActivite));
+            $sql = sprintf($sql, $DescriActivite,$Duree,$PoidsDeb,$PoidsFin,$NomActivite,$idObjectif,$idActivite);
             $query = $this->db->query($sql);
 
         }

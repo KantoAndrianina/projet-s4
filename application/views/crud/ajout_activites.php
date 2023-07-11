@@ -290,7 +290,7 @@
                     <h4 class="card-title">Ajouts Activites</h4>
                     <p class="card-description"> Ajouter  <code>.Activites</code>
                     </p>
-                            <form action="<?php echo base_url(); ?>/index.php/admin/index" method="post">
+                            <form action="<?php echo base_url(); ?>/index.php/admin/insertActivite" method="post">
                                             <div class="row">
                                                 <div class="col-md-6">
                                                 <div class="form-group row">
@@ -305,7 +305,7 @@
                                                             <div class="form-group row">
                                                                 <label class="col-sm-3 col-form-label">Duree</label>
                                                                 <div class="col-sm-9">
-                                                                <input type="number" class="form-control" name="Duree" id="Duree"/>
+                                                                <input type="number" class="form-control" name="dure" id="dure"/>
                                                                 </div>
                                                             </div>
                                                             </div>
@@ -314,14 +314,14 @@
                                                                         <div class="form-group row">
                                                                             <label class="col-sm-3 col-form-label">PoidsDeb</label>
                                                                             <div class="col-sm-9">
-                                                                            <input type="number" class="form-control" name="PoidsDeb" id="PoidsDeb" />
+                                                                            <input type="number" class="form-control" name="poidsD" id="poidsD" />
                                                                             </div>
                                                                         </div>
                                                                                 <div class="row">
                                                                                     <div class="form-group row">
                                                                                         <label class="col-sm-3 col-form-label">PoidsFin</label>
                                                                                         <div class="col-sm-9">
-                                                                                        <input type="number" class="form-control "  name="PoidsFin" id="PoidsFin"/>
+                                                                                        <input type="number" class="form-control "  name="poidsF" id="poidsF"/>
                                                                                         </div>
                                                                                     </div>
                                                                                     </div>
@@ -338,13 +338,13 @@
                                                                         <div class="col-sm-4">
                                                                         <div class="form-check">
                                                                             <label class="form-check-label">
-                                                                            <input type="radio" class="form-check-input" name="Augmenter" id="Augmenter" value="" checked>Augmenter Poids </label>
+                                                                            <input type="radio" class="form-check-input" name="Augmenter" id="Augmenter" value="option1" checked>Augmenter Poids </label>
                                                                         </div>
                                                                         </div>
                                                                         <div class="col-sm-5">
                                                                         <div class="form-check">
                                                                             <label class="form-check-label">
-                                                                            <input type="radio" class="form-check-input" name="Réduire" id="Réduire" value="option2">Réduire Poids </label>
+                                                                            <input type="radio" class="form-check-input" name="Augmenter" id="Augmenter" value="option2">Réduire Poids </label>
                                                                         </div>
                                                                         <br>
 

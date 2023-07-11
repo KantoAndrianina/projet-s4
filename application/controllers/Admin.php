@@ -49,7 +49,7 @@ class Admin extends CI_Controller
         $data['content'] = 'crud/ajout_regimes';
 		$this->load->view('index',$data);
 	}
-	public function insert()
+	public function modifier_plat()
 	{
 
 		$id = $_GET['idPlat'];
@@ -58,22 +58,63 @@ class Admin extends CI_Controller
         $data['content'] = 'crud/modif_plat';
 		$this->load->view('index',$data);
 	}
-	public function modifier_activites()
+	public function modifier_activite()
 	{
-		$id = $_GET['idPlat'];
+		$id = $_GET['idActivite'];
 		$data = array();
         $data['id'] = $id;
         $data['content'] = 'crud/modif_activite';
 		$this->load->view('index',$data);
 	}
-	// public function insert()
-	// {
-	// 	$produit = $this->input->post("Nomplat");
-	// 	$quantite = $this->input->post("typePlat");
-	// 	$produit = $this->input->post("PrixUnitaire");
-	// 	$quantite = $this->input->post("ImgPlat");
-	// 	$this->Model->insertAchat($Nomplat, $typePlat,$PrixUnitaire,$ImgPlat);
-	// 	$url=base_url().'index.php/welcome/total';
-	// 	redirect($url);
+	public function modifier_regime()
+	{
+		$id = $_GET['idRegime'];
+		$data = array();
+        $data['id'] = $id;
+        $data['content'] = 'crud/modif_regime';
+		$this->load->view('index',$data);
+	}
+	public function insertPlat()
+	{
+		$nom = $this->input->post("nom");
+		$prix = $this->input->post("prix");
+		$img = $this->input->post("img");
+		// $this->Model->insertPlat($nom, $prix,$img);
+		// $url=base_url().'index.php/admin/index';
+		// redirect($url);
+		echo $nom;
+		echo $prix;
+		echo $img;
+	}
+	public function insertActivite()
+	{
+		$descri = $this->input->post("descri");
+		$dure = $this->input->post("dure");
+		$poidsD = $this->input->post("poidsD");
+		$poidsF = $this->input->post("poidsF");
+		$NomActivite = $this->input->post("NomActivite");
+		$augmenter = $this->input->post("Augmenter");
+
+		if($augmenter=="option1"){
+			$augmenter = 1;
+		}
+		elseif  ($augmenter=="option2"){
+			$augmenter = 2;
+		}
+		else{
+			return "erreur";
+		}
+			
+		$this->Model->insertActivite($descri, $dure,$poidsD,$poidsF,$NomActivite,$augmenter);
+		$url=base_url().'index.php/admin/index';
+		redirect($url);
 		
+		// echo ($descri);
+		// echo ($dure);
+		// echo ($poidsD);
+		// echo ($poidsF);
+		// echo ($augmenter);
+	}
+
+
 }
