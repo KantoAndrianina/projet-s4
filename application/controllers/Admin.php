@@ -32,7 +32,8 @@ class Admin extends CI_Controller
 	{
 		$data = array();
         $data['listePlat'] = $this->Model->getPlat();
-        $data['listeActivite'] = $this->Model->getPlat();
+        $data['listeActivite'] = $this->Model->getAllActivite();
+        $data['listeRegime'] = $this->Model->getAllRegime();
         $data['content'] = 'crud/listes';
 		$this->load->view('index',$data);
 	}

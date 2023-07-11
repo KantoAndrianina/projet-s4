@@ -242,22 +242,18 @@
                         </tr>
                       </thead>
                       <tbody>
+                      <?php if(isset($listePlat))
+                            {
+                            foreach ($listePlat as $info) { ?>
                         <tr>
-                          <td>1</td>
-                          <td>Pâte</td>
-                          <td>20000</td>
-                          <td>Pâte.jpg</td>
-                          <td><label class="badge badge-warning">Modifier</label></td>
-                          <td><label class="badge badge-danger">Supprimer</label></td>
+                          <td><?php echo $info['Nomplat']?></td>
+                          <td><?php echo $info['typePlat']?></td>
+                          <td><?php echo $info['PrixUnitaire']?></td>
+                          <td><?php echo $info['ImgPlat']?></td>
+                          <td><a class="badge badge-warning" href="<?php echo base_url(); ?>index.php/admin/modifier_plat?idPlat=<?php echo $info['idPlat']?>">Modifier</a></td>
+                          <td><a class="badge badge-danger" href="<?php echo base_url(); ?>index.php/admin/detail_sugg">Supprimer</a></td>
                         </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>Frite</td>
-                          <td>10000</td>
-                          <td>Frite.jpg</td>
-                          <td><label class="badge badge-warning">Modifier</label></td>
-                          <td><label class="badge badge-danger">Supprimer</label></td>
-                        </tr>
+                        <?php }} ?>
                       </tbody>
                     </table><br>
             <input class="btn btn-outline-success btn-fw" type="submit" value="Ajouter" />    
@@ -546,8 +542,10 @@
                         </tr>
                       </thead>
                       <tbody>
+                      <?php if(isset($listeActivite))
+                            {
+                            foreach ($listeActivite as $info) { ?>
                         <tr>
-
                           <td><?php echo $info['idActivite']?></td>
                           <td><?php echo $info['DescriActivite']?></td>
                           <td><?php echo $info['Duree']?></td>
@@ -555,9 +553,11 @@
                           <td><?php echo $info['PoidsFin']?></td>
                           <td><?php echo $info['NomActivite']?></td>
                           <td><?php echo $info['idObjectif']?></td>
-                          <td><a class="badge badge-warning" href="<?php echo base_url(); ?>index.php/admin/modifier_plat?idPlat=<?php echo $info['idPlat']?>">Modifier</a></td>
+                          <td><a class="badge badge-warning" href="<?php echo base_url(); ?>index.php/admin/modifier_plat?idPlat=<?php echo $info['idActivite']?>">Modifier</a></td>
                           <td><a class="badge badge-danger" href="<?php echo base_url(); ?>index.php/admin/detail_sugg">Supprimer</a></td>
                         </tr>
+                        <?php }} ?>
+
                       </tbody>
                     </table><br>
             <input class="btn btn-outline-success btn-fw" type="submit" value="Ajouter" />    
@@ -586,17 +586,18 @@
                         </tr>
                       </thead>
                       <tbody>
-                      <?php if(isset($listePlat))
+                      <?php if(isset($listeRegime))
                             {
-                            foreach ($listePlat as $info) { ?>
+                            foreach ($listeRegime as $info) { ?>
                         <tr>
-                          <td><?php echo $info['Nomplat']?></td>
-                          <td><?php echo $info['typePlat']?></td>
-                          <td><?php echo $info['PrixUnitaire']?></td>
-                          <td><?php echo $info['ImgPlat']?></td>
-                          <td><a class="badge badge-warning" href="<?php echo base_url(); ?>index.php/admin/modifier_plat?idPlat=<?php echo $info['idPlat']?>">Modifier</a></td>
+                          <td><?php echo $info['idObjectif']?></td>
+                          <td><?php echo $info['DescriRegime']?></td>
+                          <td><?php echo $info['PoidsDeb']?></td>
+                          <td><?php echo $info['PoidsFin']?></td>
+                          <td><a class="badge badge-warning" href="<?php echo base_url(); ?>index.php/admin/modifier_plat?idPlat=<?php echo $info['idRegime']?>">Modifier</a></td>
                           <td><a class="badge badge-danger" href="<?php echo base_url(); ?>index.php/admin/detail_sugg">Supprimer</a></td>
                         </tr>
+                        <?php }} ?>
                       </tbody>
                     </table><br>
             <input class="btn btn-outline-success btn-fw" type="submit" value="Ajouter" />    
