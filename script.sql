@@ -194,13 +194,20 @@ CREATE table VerifCode
 CREATE table Suggestion
 (
     idSuggestion Integer PRIMARY KEY NOT NULL auto_increment,
+    idUser Integer,
     idRegime Integer,
     idActivite Integer,
-    idUser Integer,
     Foreign KEY (idRegime) REFERENCES Regime(idRegime),
     Foreign KEY (idActivite) REFERENCES Activite(idActivite),
     Foreign KEY (idActivite) REFERENCES Activite(idActivite)
 );
+INSERT INTO suggestion(idUser,idRegime,idActivite)
+VALUES
+    (4,3,1),
+    (5,5,5),
+    (6,4,3),
+    (7,5,5),
+    (8,3,1);
 
 create or replace view v_user_infoUser as(
 select u.idUser , u.NomUser , u.Prenom, i.Genre,i.Taille, i.PoidsInit, i.PoidsObj,o.typeObjectif
@@ -231,13 +238,59 @@ group by idregime, DescriRegime, PoidsDeb, PoidsFin
 select * 
 from v_all_regime
 where idObjectif=1 and PoidsDeb <= 3 and PoidsFin >= 3 and idRegime=1
-<<<<<<< Updated upstream
 
--- view get infos_user by idUser
-CREATE OR REPLACE VIEW v_infos_user_by_id AS 
-SELECT u.idUser, u.NomUser, o.TypeObjectif, i.PoidsInit, i.PoidsObj, i.Taille 
-FROM InfoUser i 
-JOIN User u on u.idUser = i.idUser
-JOIN Objectif o on o.idObjectif = i.idObjectif;
-=======
->>>>>>> Stashed changes
+-- get Nombres d'user Hors admin
+SELECT count(idUser) nbr_user FROM user where isAdmin = 0;
+
+-- Liste augmenter et reduire
+SELECT u.NomUser, i.PoidsInit, i.PoidsObj, i.Taille, o.typeObjectif
+FROM InfoUser i
+JOIN user u on u.idUser = i.idUser
+JOIN Objectif o on i.idObjectif = o.idObjectif
+WHERE i.idObjectif = 1;
+
+-- Liste reduire
+SELECT u.NomUser, i.PoidsInit, i.PoidsObj, i.Taille, o.typeObjectif
+FROM InfoUser i
+JOIN user u on u.idUser = i.idUser
+JOIN Objectif o on i.idObjectif = o.idObjectif
+WHERE i.idObjectif = 2;
+
+-- Liste par idRegime
+SELECT u.NomUser,s.idRegime, count(idRegime) compte_regime
+FROM suggestion s
+JOIN user u on u.idUser = s.idUser
+GROUP BY idRegime;
+
+-- Liste par actvite
+SELECT u.NomUser,a.NomActivite, count(s.idActivite) compte_activite
+FROM suggestion s
+JOIN user u on u.idUser = s.idUser
+JOIN Activite a on a.idActivite = s.idActivite
+GROUP BY idRegime;
+
+-- Liste compte Masculin et feminin
+SELECT Genre, count(Genre) as compte_genre
+FROM InfoUser
+GROUP BY Genre;
+
+-- Moyenne poids vise te hitombo sy te hiena
+-- difference de poids te hitombo
+CREATE OR REPLACE VIEW v_diff_mitombo AS 
+SELECT idObjectif, sum(PoidsObj - PoidsInit) as diff_mitombo
+FROM InfoUser
+WHERE idObjectif = 1
+GROUP BY idObjectif;
+
+-- difference de poids te hitombo
+CREATE OR REPLACE VIEW v_diff_mihena AS 
+SELECT idObjectif, sum(PoidsInit - PoidsObj) as diff_mihena
+FROM InfoUser
+WHERE idObjectif = 2
+GROUP BY idObjectif;
+
+-- compte objectif
+CREATE OR REPLACE VIEW v_compte_objectif AS
+SELECT idObjectif, count(idObjectif) as compte_objectif
+FROM InfoUser
+GROUP BY idObjectif; 
