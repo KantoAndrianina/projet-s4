@@ -7,6 +7,8 @@ class User extends CI_Controller
     {
         parent::__construct();
 		$this->load->model('Model');
+		$this->load->library('session');
+		
     }
     // public function index()
 	// {
@@ -18,7 +20,8 @@ class User extends CI_Controller
     public function index()
 	{
 		$data = array();
-        $data['content'] = 'pages/user';
+		$data['content'] = 'pages/user';
+		$data['listInfoUser'] = $this->Model->getInfoUserById($idUser);
 		$this->load->view('index',$data);
 	}
     public function porte_monnaie()

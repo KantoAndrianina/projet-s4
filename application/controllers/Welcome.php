@@ -44,6 +44,9 @@ class Welcome extends CI_Controller {
 
 		if($this->Model->checkLogin($mail,$pass))
 		{
+			$this->session->set_userdata('idUser',10);
+			$idUser =  $this->session->userdata('idUser');
+			$data['idUser'] = $idUser;
 			// $this->session->set_userdata('Email', $mail);
 			// $_SESSION['Email']=$mail;
 			if($this->Model->checkAdmin($mail))
