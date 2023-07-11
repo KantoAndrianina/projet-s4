@@ -18,6 +18,7 @@ class User extends CI_Controller
     public function index()
 	{
 		$data = array();
+		$data['suggestions'] = $this->Model->getSuggestion(4);
         $data['content'] = 'pages/user';
 		$this->load->view('index',$data);
 	}
