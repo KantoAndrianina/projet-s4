@@ -203,9 +203,10 @@ CREATE table Suggestion
 );
 
 create or replace view v_user_infoUser as(
-select u.idUser , u.NomUser , u.Prenom, i.Genre,i.Taille, i.PoidsInit, i.PoidsObj,i.idObjectif
+select u.idUser , u.NomUser , u.Prenom, i.Genre,i.Taille, i.PoidsInit, i.PoidsObj,o.typeObjectif
 from User u
-JOIN InfoUser i on i.idUser=u.idUser 
+JOIN InfoUser i on i.idUser=u.idUser
+JOIN Objectif o on o.idObjectif = i.idObjectif
 );
 
 -- CREATE OR REPLACE VIEW v_ AS 
