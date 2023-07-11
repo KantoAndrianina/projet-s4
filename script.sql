@@ -231,3 +231,10 @@ group by idregime, DescriRegime, PoidsDeb, PoidsFin
 select * 
 from v_all_regime
 where idObjectif=1 and PoidsDeb <= 3 and PoidsFin >= 3 and idRegime=1
+
+-- view get infos_user by idUser
+CREATE OR REPLACE VIEW v_infos_user_by_id AS 
+SELECT u.idUser, u.NomUser, o.TypeObjectif, i.PoidsInit, i.PoidsObj, i.Taille 
+FROM InfoUser i 
+JOIN User u on u.idUser = i.idUser
+JOIN Objectif o on o.idObjectif = i.idObjectif;
