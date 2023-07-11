@@ -43,7 +43,7 @@
                   <span class="availability-status online"></span>
                 </div>
                 <div class="nav-profile-text">
-                  <p class="mb-1 text-black">Kanto Rabenanahary</p>
+                  <p class="mb-1 text-black"><?php echo $listInfoUser[0]['prenom']?> <?php echo $listInfoUser[0]['nomuser']?></p>
                 </div>
               </a>
               <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
@@ -75,7 +75,7 @@
                   <!--change to offline or busy as needed-->
                 </div>
                 <div class="nav-profile-text d-flex flex-column">
-                  <span class="font-weight-bold mb-2">Bertha Benz</span>
+                  <span class="font-weight-bold mb-2"><?php echo $listInfoUser[0]['prenom']?> <?php echo $listInfoUser[0]['nomuser']?></span>
                   <span class="text-secondary text-small">User</span>
                 </div>
               </a>

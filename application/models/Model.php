@@ -170,6 +170,14 @@
             $row=$query->row_array();
             return $row['idObjectif'];
         }
+        public function getObjectifById($idObjectif)
+        {   
+            $sql = "select typeObjectif from objectif where idObjectif = %s";
+            $sql = sprintf($sql,$idObjectif);
+            $query = $this->db->query($sql);
+            $row=$query->row_array();
+            return $row['typeObjectif'];
+        }
 
         public function getSuggestion($idUser)
         {   

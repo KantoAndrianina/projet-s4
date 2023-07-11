@@ -21,8 +21,11 @@ class User extends CI_Controller
 	{
 		$data = array();
 		$idUser = $_GET['idUser'];
-		$data['content'] = 'pages/user';
 		$data['listInfoUser'] = $this->Model->getUserInfoById($idUser);
+		// $data['suggestions'] = $this->Model->getSuggestion($idUser);
+		$objectif= $this->Model->getObjectifByUser($idUser);
+		$data['nomObjectif'] = $this->Model->getObjectifById($objectif);
+		$data['content'] = 'pages/user';
 		$this->load->view('index',$data);
 	}
     public function porte_monnaie()
