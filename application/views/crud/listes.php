@@ -547,28 +547,16 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <td>1</td>
-                          <td>Lorem Ipsum</td>
-                          <td>15</td>
-                          <td>3</td>
-                          <td>5</td>
-                          <td>Courir</td>
-                          <td>2</td>
-                          <!-- <td class="text-danger"> 28.76% <i class="mdi mdi-arrow-down"></i></td> -->
-                          <td><label class="badge badge-warning">Modifier</label></td>
-                          <td><label class="badge badge-danger">Supprimer</label></td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>Lorem Ipsum</td>
-                          <td>10</td>
-                          <td>2</td>
-                          <td>4</td>
-                          <td>Marcher</td>
-                          <td>2</td>
-                          <!-- <td class="text-danger"> 28.76% <i class="mdi mdi-arrow-down"></i></td> -->
-                          <td><label class="badge badge-warning">Modifier</label></td>
-                          <td><label class="badge badge-danger">Supprimer</label></td>
+
+                          <td><?php echo $info['idActivite']?></td>
+                          <td><?php echo $info['DescriActivite']?></td>
+                          <td><?php echo $info['Duree']?></td>
+                          <td><?php echo $info['PoidsDeb']?></td>
+                          <td><?php echo $info['PoidsFin']?></td>
+                          <td><?php echo $info['NomActivite']?></td>
+                          <td><?php echo $info['idObjectif']?></td>
+                          <td><a class="badge badge-warning" href="<?php echo base_url(); ?>index.php/admin/modifier_plat?idPlat=<?php echo $info['idPlat']?>">Modifier</a></td>
+                          <td><a class="badge badge-danger" href="<?php echo base_url(); ?>index.php/admin/detail_sugg">Supprimer</a></td>
                         </tr>
                       </tbody>
                     </table><br>
@@ -598,25 +586,16 @@
                         </tr>
                       </thead>
                       <tbody>
+                      <?php if(isset($listePlat))
+                            {
+                            foreach ($listePlat as $info) { ?>
                         <tr>
-                          <td>Augmenter Poids</td>
-                          <td>Lorem Ipsum</td>
-                          <td>15</td>
-                          <td>3</td>
-                          <td>5</td>
-                          <td>Pâte</td>
-                          <td><label class="badge badge-warning">Modifier</label></td>
-                          <td><label class="badge badge-danger">Supprimer</label></td>
-                        </tr>
-                        <tr>
-                          <td>Augmenter Poids</td>
-                          <td>Lorem Ipsum</td>
-                          <td>10</td>
-                          <td>2</td>
-                          <td>4</td>
-                          <td>Frite</td>
-                          <td><label class="badge badge-warning">Modifier</label></td>
-                          <td><label class="badge badge-danger">Supprimer</label></td>
+                          <td><?php echo $info['Nomplat']?></td>
+                          <td><?php echo $info['typePlat']?></td>
+                          <td><?php echo $info['PrixUnitaire']?></td>
+                          <td><?php echo $info['ImgPlat']?></td>
+                          <td><a class="badge badge-warning" href="<?php echo base_url(); ?>index.php/admin/modifier_plat?idPlat=<?php echo $info['idPlat']?>">Modifier</a></td>
+                          <td><a class="badge badge-danger" href="<?php echo base_url(); ?>index.php/admin/detail_sugg">Supprimer</a></td>
                         </tr>
                       </tbody>
                     </table><br>
