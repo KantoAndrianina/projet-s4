@@ -50,18 +50,7 @@ class Admin extends CI_Controller
 	}
 	public function insert()
 	{
-<<<<<<< HEAD
-		$descri = $this->input->post("descri");
-		$duree = $this->input->post("Duree");
-		$poidsDeb = $this->input->post("PoidsDeb");
-		$poidsFin = $this->input->post("PoidsFin");
-		$nomActivite = $this->input->post("NomActivite");
-		$augmenter = $this->input->post("Augmenter");
-		$réduire = $this->input->post("Réduire");
-		$this->Model->insertAchat($descri, $duree,$poidsDeb,$poidsFin,$nomActivite,$augmenter,$réduire);
-		$url=base_url().'index.php/admin/index';
-		redirect($url);
-=======
+
 		$id = $_GET['idPlat'];
 		$data = array();
         $data['id'] = $id;
@@ -85,7 +74,5 @@ class Admin extends CI_Controller
 	// 	$this->Model->insertAchat($Nomplat, $typePlat,$PrixUnitaire,$ImgPlat);
 	// 	$url=base_url().'index.php/welcome/total';
 	// 	redirect($url);
->>>>>>> parent of 28db2e9 (crud_modif_supp)
 		
-	}	
 }
