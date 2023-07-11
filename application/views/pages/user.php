@@ -112,8 +112,9 @@
                   <div class="card-body">
                     <div class="row">
                       <div class="col-md-6">
-                        <p>Poids actuel : ... KG</p>
                         <p>Poids goal : ... KG</p>
+                        <p>Poids actuel : ... KG</p>
+                        <p>Taille : ... CM</p>
                       </div>
                     </div>
                   </div>
