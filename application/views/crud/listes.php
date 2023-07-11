@@ -454,7 +454,7 @@
                           <td><?php echo $info['PoidsFin']?></td>
                           <td><?php echo $info['NomActivite']?></td>
                           <td><?php echo $info['idObjectif']?></td>
-                          <td><a class="badge badge-warning" href="<?php echo base_url(); ?>index.php/admin/modifier_plat?idPlat=<?php echo $info['idPlat']?>">Modifier</a></td>
+                          <td><a class="badge badge-warning" href="<?php echo base_url(); ?>index.php/admin/modifier_activite?idActivite=<?php echo $info['idActivite']?>">Modifier</a></td>
                           <td><a class="badge badge-danger" href="<?php echo base_url(); ?>index.php/admin/detail_sugg">Supprimer</a></td>
                         </tr>
                         <?php }}?>
@@ -486,15 +486,16 @@
                         </tr>
                       </thead>
                       <tbody>
-                      <?php if(isset($listePlat))
+                      <?php if(isset($listeRegime))
                             {
-                            foreach ($listePlat as $info) { ?>
+                            foreach ($listeRegime as $info) { ?>
                         <tr>
-                          <td><?php echo $info['Nomplat']?></td>
-                          <td><?php echo $info['typePlat']?></td>
-                          <td><?php echo $info['PrixUnitaire']?></td>
-                          <td><?php echo $info['ImgPlat']?></td>
-                          <td><a class="badge badge-warning" href="<?php echo base_url(); ?>index.php/admin/modifier_plat?idPlat=<?php echo $info['idPlat']?>">Modifier</a></td>
+                          <td><?php echo $info['idRegime']?></td>
+                          <td><?php echo $info['idObjectif']?></td>
+                          <td><?php echo $info['DescriRegime']?></td>
+                          <td><?php echo $info['PoidsDeb']?></td>
+                          <td><?php echo $info['PoidsFin']?></td>
+                          <td><a class="badge badge-warning" href="<?php echo base_url(); ?>index.php/admin/modifier_regime?idRegime=<?php echo $info['idRegime']?>">Modifier</a></td>
                           <td><a class="badge badge-danger" href="<?php echo base_url(); ?>index.php/admin/detail_sugg">Supprimer</a></td>
                         </tr>
                         <?php }}?>

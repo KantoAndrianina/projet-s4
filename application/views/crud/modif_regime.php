@@ -85,8 +85,32 @@
                 </div>
                 <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
               </a>
+             
             </li>
-            <!-- <li class="nav-item">
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo base_url(); ?>index.php/admin/index">
+                <span class="menu-title">Dashboard</span>
+                <i class="mdi mdi-home menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <span class="menu-title">CRUD</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-brightness-5 menu-icon"></i>
+              </a>
+              <div class="collapse" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>index.php/admin/crud_liste">Liste</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>index.php/admin/crud_plat">Plat</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>index.php/admin/crud_regime">Régime</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>index.php/admin/crud_activite">Activité</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+            <!-- </li>
+            <li class="nav-item">
               <a class="nav-link" href="../../index.html">
                 <span class="menu-title">Dashboard</span>
                 <i class="mdi mdi-home menu-icon"></i>
@@ -162,30 +186,7 @@
                 </div>
               </span>
             </li>
-          </ul>
-        </nav> -->
-        <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url(); ?>index.php/admin/index">
-                <span class="menu-title">Dashboard</span>
-                <i class="mdi mdi-home menu-icon"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <span class="menu-title">CRUD</span>
-                <i class="menu-arrow"></i>
-                <i class="mdi mdi-brightness-5 menu-icon"></i>
-              </a>
-              <div class="collapse" id="ui-basic">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>index.php/admin/crud_liste">Liste</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>index.php/admin/crud_plat">Plat</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>index.php/admin/crud_regime">Régime</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>index.php/admin/crud_activite">Activité</a></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
+          </ul> -->
         </nav>
         <!-- partial -->
         <div class="main-panel">
@@ -193,15 +194,16 @@
             <div class="row">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Modif Plats</h4>
-                    <p class="card-description"> Modif  <code>.Plats</code>
+                    <h4 class="card-title">Modif Regimes</h4>
+                    <p class="card-description"> Modif  <code>.Regimes</code>
                     </p>
-                            <form action="<?php echo base_url(); ?>/index.php/admin/insert"  method="post">
-                                                <?php echo $id; ?>
+                    <?php echo $id; ?>
+
+                            <form action="<?php echo base_url(); ?>/index.php/admin/index">
                                             <div class="row">
                                                 <div class="col-md-6">
                                                 <div class="form-group row">
-                                                    <label class="col-sm-3 col-form-label">NomPlat</label>
+                                                    <label class="col-sm-3 col-form-label">Objectifs</label>
                                                     <div class="col-sm-9">
                                                     <input type="text" class="form-control" />
                                                     </div>
@@ -210,23 +212,46 @@
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                             <div class="form-group row">
-                                                                <label class="col-sm-3 col-form-label">PrixUnitaire</label>
+                                                                <label class="col-sm-3 col-form-label">DescriRegime</label>
                                                                 <div class="col-sm-9">
-                                                                <input type="number" class="form-control" />
+                                                                <input type="text" class="form-control" />
                                                                 </div>
                                                             </div>
                                                             </div>
                                                                     <div class="row">
                                                                         <div class="col-md-6">
                                                                         <div class="form-group row">
-                                                                            <label class="col-sm-3 col-form-label">ImgPlat</label>
+                                                                            <label class="col-sm-3 col-form-label">Durée</label>
                                                                             <div class="col-sm-9">
-                                                                            <input type="text" class="form-control" />
+                                                                            <input type="number" class="form-control" />
                                                                             </div>
                                                                         </div>
-                  <input class="btn btn-outline-success btn-fw" type="submit" value="Valider" />    
+                                                                                <div class="row">
+                                                                                    <div class="form-group row">
+                                                                                        <label class="col-sm-3 col-form-label">PoidsDeb</label>
+                                                                                        <div class="col-sm-9">
+                                                                                        <input type="number" class="form-control" />
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    </div>
+                                                                                                    <div class="row">
+                                                                                                        <div class="form-group row">
+                                                                                                            <label class="col-sm-3 col-form-label">PoidsFin</label>
+                                                                                                            <div class="col-sm-9">
+                                                                                                            <input type="text" class="form-control" />
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        </div>
+                                                               
 
-                                                                        </div>
+                                                                    </div>
+
+<input class="btn btn-outline-success btn-fw" type="submit" value="Valider" />    
+
+</div>
+
+
+
                                                                     </form>
                   </div>
 

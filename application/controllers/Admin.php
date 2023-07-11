@@ -35,7 +35,8 @@ class Admin extends CI_Controller
 	{
 		$data = array();
         $data['listePlat'] = $this->Model->getPlat();
-        $data['listeActivite'] = $this->Model->getPlat();
+        $data['listeActivite'] = $this->Model->getActivite();
+        $data['listeRegime'] = $this->Model->getRegime();
         $data['content'] = 'crud/listes';
 		$this->load->view('index',$data);
 	}
@@ -60,12 +61,20 @@ class Admin extends CI_Controller
         $data['content'] = 'crud/modif_plat';
 		$this->load->view('index',$data);
 	}
-	public function modifier_activites()
+	public function modifier_activite()
 	{
-		$id = $_GET['idPlat'];
+		$id = $_GET['idActivite'];
 		$data = array();
         $data['id'] = $id;
         $data['content'] = 'crud/modif_activite';
+		$this->load->view('index',$data);
+	}
+	public function modifier_regime()
+	{
+		$id = $_GET['idRegime'];
+		$data = array();
+        $data['id'] = $id;
+        $data['content'] = 'crud/modif_regime';
 		$this->load->view('index',$data);
 	}
 	// public function insert()

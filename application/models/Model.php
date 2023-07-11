@@ -72,6 +72,42 @@
             }
             return $result;
         }
+        public function getPlat()
+        {   
+            $sql = "select * from plat ";
+            $query = $this->db->query($sql);
+            $result = array();
+
+            foreach($query->result_array() as $row)
+            {
+            $result[] = $row;
+            }
+            return $result;
+        }
+        public function getActivite()
+        {   
+            $sql = "select * from Activite ";
+            $query = $this->db->query($sql);
+            $result = array();
+
+            foreach($query->result_array() as $row)
+            {
+            $result[] = $row;
+            }
+            return $result;
+        }
+        public function getRegime()
+        {   
+            $sql = "select * from Regime ";
+            $query = $this->db->query($sql);
+            $result = array();
+
+            foreach($query->result_array() as $row)
+            {
+            $result[] = $row;
+            }
+            return $result;
+        }
 
         public function getPoidsDiff($idUser)
         {   

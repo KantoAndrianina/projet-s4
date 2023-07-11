@@ -189,6 +189,7 @@
                     <h4 class="card-title">Modif Activites</h4>
                     <p class="card-description"> Modif  <code>.Activites</code>
                     </p>
+                                                <?php echo $id; ?>
                             <form action="<?php echo base_url(); ?>/index.php/admin/index">
                                             <div class="row">
                                                 <div class="col-md-6">
