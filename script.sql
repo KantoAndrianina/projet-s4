@@ -45,62 +45,54 @@ CREATE table InfoUser
     Foreign KEY (idUser) REFERENCES User(idUser),
     Foreign KEY (idObjectif) REFERENCES Objectif(idObjectif)
 );
+alter table InfoUser add(isGold Integer);
 
-INSERT INTO InfoUser (idUser,Genre,Taille,PoidsInit,PoidsObj,idObjectif) 
+INSERT INTO InfoUser (idUser,Genre,Taille,PoidsInit,PoidsObj,idObjectif,isGold) 
 VALUES 
-    (4,"Masculin",175,70.0,80.0,1),
-    (5,"Masculin",185,80.5,70.0,2),
-    (6,"Masculin",180,80.0,75.0,2),
-    (7,"Feminin",165,90.5,70.0,2),
-    (8,"Feminin",170,70.0,80.5,1);
+    (4,"Masculin",175,70,80,1,0),
+    (5,"Masculin",185,80.5,70,2,1),
+    (6,"Masculin",180,80,75,2,0),
+    (7,"Feminin",165,90.5,70,2,0),
+    (8,"Feminin",170,70,80,1,1);
 
-CREATE table Plat
+CREATE table PLat
 (
     idPlat Integer PRIMARY KEY NOT NULL auto_increment,
     Nomplat VARCHAR(50),
+    typePlat VARCHAR(50),
     PrixUnitaire Integer,
     ImgPlat VARCHAR(50)
 );
-
-INSERT INTO Plat (Nomplat,PrixUnitaire,ImgPlat) 
+INSERT INTO PLat (Nomplat,typePlat,PrixUnitaire,ImgPlat) 
 VALUES 
-    ("Pate",20000,"Pate.jpg"),
-    ("Frite",10000,"Frite.jpg"),
-    ("Salade",5000,"Salade.jpg"),
-    ("Pizza",15000,"Pizza.jpg"),
-    ("Legume",5000,"Legume.jpg");
+    ("Pate","glucide",20000,"Pate.jpg"),
+    ("Frite","glucide",10000,"Frite.jpg"),
+    ("Salade","legume",5000,"Salade.jpg"),
+    ("Brocolis","legume",3500,"brocolis.jpg"),
+    ("Poulet","viande",8000,"poulet.jpg"),
+    ("Steak","viande",9500,"viande.jpg"),
+    ("Thon","poisson",6500,"poisson.jpg"),
+    ("Carpe","poisson",6000,"poisson.jpg");
 
-CREATE TABLE composition (
-    idComposition Integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    idPlat Integer NOT NULL,
-    idRegime Integer NOT NULL,
-    jours Integer NOT NULL
-);
-INSERT INTO composition(idPlat,idRegime,jours) 
-VALUES
-(1,),
 
 CREATE table Regime
 (
     idRegime Integer PRIMARY KEY NOT NULL auto_increment,
     idObjectif Integer,
     DescriRegime VARCHAR(50),
-    Durée Integer,
     PoidsDeb Double precision,
     PoidsFin Double precision,
-    idComposition Integer,
-    Foreign KEY (idObjectif) REFERENCES Objectif(idObjectif),
-    Foreign KEY (idComposition) REFERENCES composition(idComposition)
-
+    Foreign KEY (idObjectif) REFERENCES Objectif(idObjectif)
 );
 
-INSERT INTO Regime (idObjectif,DescriRegime,Durée,PoidsDeb,PoidsFin,idPlat) 
+INSERT INTO Regime (idObjectif,DescriRegime,PoidsDeb,PoidsFin) 
 VALUES 
-    (1,"Lorem Ipsum",15,3.0,5.0,1),
-    (1,"Lorem Ipsum",10,2.0,4.0,2),
-    (2,"Lorem Ipsum",20,3.0,5.0,3),
-    (2,"Lorem Ipsum",40,5.0,10.0,5),
-    (2,"Lorem Ipsum",25,4.0,6.0,5);
+    (1,"Lorem Ipsum",2,4),
+    (1,"Lorem Ipsum",3,5),
+    (1,"Lorem Ipsum",5,10),
+    (2,"Lorem Ipsum",3,5),
+    (2,"Lorem Ipsum",5,10),
+    (2,"Lorem Ipsum",4,6);
 
 CREATE table Activite
 (
@@ -114,14 +106,6 @@ CREATE table Activite
     Foreign KEY (idObjectif) REFERENCES Objectif(idObjectif)
 );
 
-CREATE table Porte_Monnaie
-(
-    idPorte_Monnaie Integer PRIMARY KEY NOT NULL auto_increment,
-    idUser Integer,
-    Montant Integer,
-    Foreign KEY (idUser) REFERENCES User(idUser)
-);
-
 INSERT INTO Activite (idObjectif,DescriActivite,Duree,PoidsDeb,PoidsFin,NomActivite) 
 VALUES 
     (1,"Lorem Ipsum",20,3,5,"Muscu"),
@@ -130,11 +114,38 @@ VALUES
     (2,"Lorem Ipsum",15,5,7,"Courir"),
     (2,"Lorem Ipsum",40,5,10,"Piscine");
 
-CREATE table Code
+CREATE TABLE composition (
+    idComposition Integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    idPlat Integer NOT NULL,
+    idRegime Integer NOT NULL,
+    duree Integer NOT NULL
+);
+
+INSERT INTO composition(idRegime,idPlat,duree) 
+VALUES
+    (1,1,2),
+    (1,2,5),
+    (1,5,5),
+    (1,6,7),
+    (2,1,7),
+    (2,2,7),
+    (2,5,10),
+    (2,6,10),
+    (3,1,10),
+    (3,5,10),
+    (3,6,10),
+    (3,7,10),
+    (4,3,7),
+    (4,4,7),
+    (5,5,15),
+    (5,5,15);
+
+CREATE table Porte_Monnaie
 (
-    idCode Integer PRIMARY KEY NOT NULL auto_increment,
-    Code VARCHAR(50),
-    Montant Integer
+    idPorte_Monnaie Integer PRIMARY KEY NOT NULL auto_increment,
+    idUser Integer,
+    Montant Integer,
+    Foreign KEY (idUser) REFERENCES User(idUser)
 );
 
 INSERT INTO Porte_Monnaie (idUser,Montant)
@@ -145,13 +156,11 @@ VALUES
     (7,50000),
     (8,70000);
 
-CREATE table VerifCode
+CREATE table Code
 (
-    idVerifCode Integer PRIMARY KEY NOT NULL auto_increment,
-    idCode Integer,
-    idUser Integer,
-    Foreign KEY (idCode) REFERENCES Code(idCode),
-    Foreign KEY (idUser) REFERENCES User(idUser)
+    idCode Integer PRIMARY KEY NOT NULL auto_increment,
+    Code VARCHAR(50),
+    Montant Integer
 );
 
 INSERT INTO Code (Code,Montant) 
@@ -172,6 +181,16 @@ VALUES
     ("Code14",120000),
     ("Code15",150000);
 
+CREATE table VerifCode
+(
+    idVerifCode Integer PRIMARY KEY NOT NULL auto_increment,
+    idCode Integer,
+    idUser Integer,
+    Foreign KEY (idCode) REFERENCES Code(idCode),
+    Foreign KEY (idUser) REFERENCES User(idUser)
+);
+
+
 CREATE table Suggestion
 (
     idSuggestion Integer PRIMARY KEY NOT NULL auto_increment,
@@ -188,3 +207,7 @@ select u.idUser , u.NomUser , u.Prenom, i.Genre,i.Taille, i.PoidsInit, i.PoidsOb
 from User u
 JOIN InfoUser i on i.idUser=u.idUser 
 );
+
+CREATE OR REPLACE VIEW v_ AS 
+SELECT 
+FROM 
