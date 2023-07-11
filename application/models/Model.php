@@ -72,35 +72,12 @@
             }
             return $result;
         }
-        //insert user
-        public function insertUser($idUser, $NomUser, $Prenom,$Email,$Mdp)
-        {
-            $sql = "insert into User (idUser, NomUser, Prenom,Email,Mdp,isAdmin) values (%s,'%s','%s','%s','%s',0)";
-            $sql = sprintf($sql, $this->db->escape($idUser),$this->db->escape($NomUser),$this->db->escape($Prenom),$this->db->escape($Email),$this->db->escape($Mdp));
-            $query = $this->db->query($sql);
 
-        }
-        //insert info user
-        public function insertInfoUser($idInfo, $idUser, $Genre,$Taille,$PoidsInit,$PoidsObj,$idObjectif)
-        {
-            $sql = "insert into InfoUser (idInfo, idUser, Genre,Taille,PoidsInit,PoidsObj,idObjectif) values (%s,%s,'%s',%s,%s,%s,%s)";
-            $sql = sprintf($sql, $this->db->escape($idInfo),$this->db->escape($idUser),$this->db->escape($Genre),$this->db->escape($Taille),$this->db->escape($PoidsInit),$this->db->escape($PoidsObj),$this->db->escape($idObjectif));
-            $query = $this->db->query($sql);
 
-        }
-        //insert plat
-        public function insertPlat($idPlat, $Nomplat, $PrixUnitaire,$ImgPlat)
-        {
-            $sql = "insert into Plat (idPlat, Nomplat, PrixUnitaire,ImgPlat) values (%s,'%s',%s,'%s')";
-            $sql = sprintf($sql, $this->db->escape($idPlat),$this->db->escape($Nomplat),$this->db->escape($PrixUnitaire),$this->db->escape($ImgPlat));
-            $query = $this->db->query($sql);
-
-        }
-        //insert regime
-        public function insertRegime($idRegime, $idObjectif, $DescriRegime,$Durée,$PoidsDeb,$PoidsFin,$idPlat)
-        {
-            $sql = "insert into Regime (idRegime, idObjectif, DescriRegime,Durée,PoidsDeb,PoidsFin,idPlat) values (%s,%s,'%s',%s,%s,%s,%s)";
-            $sql = sprintf($sql, $this->db->escape($idRegime),$this->db->escape($idObjectif),$this->db->escape($DescriRegime),$this->db->escape($Durée),$this->db->escape($PoidsDeb),$this->db->escape($PoidsFin),$this->db->escape($idPlat));
+        public function getPoidsDiff($idUser)
+        {   
+            $sql = "select PoidsObj, PoidsInit from InfoUser where idUser = %s";
+            $sql = sprintf($sql,$idUser);
             $query = $this->db->query($sql);
 
         }
