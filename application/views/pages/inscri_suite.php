@@ -58,6 +58,16 @@
                         </div>
                     </div>
                     </div>
+                  <div class="form-group">
+                    <select class="form-control form-control-lg" id="exampleFormControlSelect2">
+                      <option>Country</option>
+                      <option>United States of America</option>
+                      <option>United Kingdom</option>
+                      <option>India</option>
+                      <option>Germany</option>
+                      <option>Argentina</option>
+                    </select>
+                  </div>
                   <div class="mt-3">
                     <a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" href="<?php echo base_url(); ?>index.php/welcome/inscri">SIGN UP</a>
                   </div>

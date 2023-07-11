@@ -63,4 +63,10 @@ class Welcome extends CI_Controller {
 		$this->load->view('index',$data);
 		
 	}
+	public function inscri()
+	{
+        $data['content'] = 'pages/inscri_suite';
+		$this->load->view('index',$data);
+		
+	}
 }
