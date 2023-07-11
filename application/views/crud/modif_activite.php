@@ -85,7 +85,6 @@
                 </div>
                 <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
               </a>
-             
             </li>
             <li class="nav-item">
               <a class="nav-link" href="<?php echo base_url(); ?>index.php/admin/index">
@@ -93,30 +92,7 @@
                 <i class="mdi mdi-home menu-icon"></i>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <span class="menu-title">CRUD</span>
-                <i class="menu-arrow"></i>
-                <i class="mdi mdi-brightness-5 menu-icon"></i>
-              </a>
-              <div class="collapse" id="ui-basic">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>index.php/admin/crud_liste">Liste</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>index.php/admin/crud_plat">Plat</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>index.php/admin/crud_regime">Régime</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>index.php/admin/crud_activite">Activité</a></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-            <!-- </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../../index.html">
-                <span class="menu-title">Dashboard</span>
-                <i class="mdi mdi-home menu-icon"></i>
-              </a>
-            </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <span class="menu-title">Basic UI Elements</span>
                 <i class="menu-arrow"></i>
@@ -185,8 +161,24 @@
                   </ul>
                 </div>
               </span>
+            </li> -->
+           
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <span class="menu-title">CRUD</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-brightness-5 menu-icon"></i>
+              </a>
+              <div class="collapse" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>index.php/admin/crud_liste">Liste</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>index.php/admin/crud_plat">Plat</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>index.php/admin/crud_regime">Régime</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>index.php/admin/crud_activite">Activité</a></li>
+                </ul>
+              </div>
             </li>
-          </ul> -->
+          </ul>
         </nav>
         <!-- partial -->
         <div class="main-panel">
@@ -194,14 +186,14 @@
             <div class="row">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Ajouts Regimes</h4>
-                    <p class="card-description"> Ajouter  <code>.Regimes</code>
+                    <h4 class="card-title">Modif Activites</h4>
+                    <p class="card-description"> Modif  <code>.Activites</code>
                     </p>
                             <form action="<?php echo base_url(); ?>/index.php/admin/index">
                                             <div class="row">
                                                 <div class="col-md-6">
                                                 <div class="form-group row">
-                                                    <label class="col-sm-3 col-form-label">Objectifs</label>
+                                                    <label class="col-sm-3 col-form-label">DescriActivite</label>
                                                     <div class="col-sm-9">
                                                     <input type="text" class="form-control" />
                                                     </div>
@@ -210,23 +202,23 @@
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                             <div class="form-group row">
-                                                                <label class="col-sm-3 col-form-label">DescriRegime</label>
+                                                                <label class="col-sm-3 col-form-label">Duree</label>
                                                                 <div class="col-sm-9">
-                                                                <input type="text" class="form-control" />
+                                                                <input type="number" class="form-control" />
                                                                 </div>
                                                             </div>
                                                             </div>
                                                                     <div class="row">
                                                                         <div class="col-md-6">
                                                                         <div class="form-group row">
-                                                                            <label class="col-sm-3 col-form-label">Durée</label>
+                                                                            <label class="col-sm-3 col-form-label">PoidsDeb</label>
                                                                             <div class="col-sm-9">
                                                                             <input type="number" class="form-control" />
                                                                             </div>
                                                                         </div>
                                                                                 <div class="row">
                                                                                     <div class="form-group row">
-                                                                                        <label class="col-sm-3 col-form-label">PoidsDeb</label>
+                                                                                        <label class="col-sm-3 col-form-label">PoidsFin</label>
                                                                                         <div class="col-sm-9">
                                                                                         <input type="number" class="form-control" />
                                                                                         </div>
@@ -234,13 +226,26 @@
                                                                                     </div>
                                                                                                     <div class="row">
                                                                                                         <div class="form-group row">
-                                                                                                            <label class="col-sm-3 col-form-label">PoidsFin</label>
+                                                                                                            <label class="col-sm-3 col-form-label">NomActivite</label>
                                                                                                             <div class="col-sm-9">
                                                                                                             <input type="text" class="form-control" />
                                                                                                             </div>
                                                                                                         </div>
                                                                                                         </div>
-                                                               
+                                                                <div class="row">
+                                                                        <label class="col-sm-3 col-form-label">Objectifs</label>
+                                                                        <div class="col-sm-4">
+                                                                        <div class="form-check">
+                                                                            <label class="form-check-label">
+                                                                            <input type="radio" class="form-check-input" name="#" id="#" value="" checked>Augmenter Poids </label>
+                                                                        </div>
+                                                                        </div>
+                                                                        <div class="col-sm-5">
+                                                                        <div class="form-check">
+                                                                            <label class="form-check-label">
+                                                                            <input type="radio" class="form-check-input" name="#" id="#" value="option2">Réduire Poids </label>
+                                                                        </div>
+                                                                        <br>
 
                                                                     </div>
 

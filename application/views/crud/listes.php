@@ -48,118 +48,17 @@
                   <span class="availability-status online"></span>
                 </div>
                 <div class="nav-profile-text">
-                  <p class="mb-1 text-black">Francko Raminoson</p>
+                  <p class="mb-1 text-black">Kanto Rabenanahary</p>
                 </div>
               </a>
               <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="mdi mdi-cached me-2 text-success"></i> Activity Log </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="<?php echo base_url(); ?>index.php/welcome/index">
                   <i class="mdi mdi-logout me-2 text-primary"></i> Signout </a>
               </div>
             </li>
             <li class="nav-item d-none d-lg-block full-screen-link">
               <a class="nav-link">
                 <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
-              </a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="mdi mdi-email-outline"></i>
-                <span class="count-symbol bg-warning"></span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
-                <h6 class="p-3 mb-0">Messages</h6>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="<?php echo base_url(); ?>assets/css-admin/images/faces/face4.jpg" alt="image" class="profile-pic">
-                  </div>
-                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Mark send you a message</h6>
-                    <p class="text-gray mb-0"> 1 Minutes ago </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="<?php echo base_url(); ?>assets/css-admin/images/faces/face2.jpg" alt="image" class="profile-pic">
-                  </div>
-                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Cregh send you a message</h6>
-                    <p class="text-gray mb-0"> 15 Minutes ago </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="<?php echo base_url(); ?>assets/css-admin/images/faces/face3.jpg" alt="image" class="profile-pic">
-                  </div>
-                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Profile picture updated</h6>
-                    <p class="text-gray mb-0"> 18 Minutes ago </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <h6 class="p-3 mb-0 text-center">4 new messages</h6>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
-                <i class="mdi mdi-bell-outline"></i>
-                <span class="count-symbol bg-danger"></span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                <h6 class="p-3 mb-0">Notifications</h6>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-success">
-                      <i class="mdi mdi-calendar"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject font-weight-normal mb-1">Event today</h6>
-                    <p class="text-gray ellipsis mb-0"> Just a reminder that you have an event today </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-warning">
-                      <i class="mdi mdi-settings"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject font-weight-normal mb-1">Settings</h6>
-                    <p class="text-gray ellipsis mb-0"> Update dashboard </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-info">
-                      <i class="mdi mdi-link-variant"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject font-weight-normal mb-1">Launch Admin</h6>
-                    <p class="text-gray ellipsis mb-0"> New admin wow! </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <h6 class="p-3 mb-0 text-center">See all notifications</h6>
-              </div>
-            </li>
-            <li class="nav-item nav-logout d-none d-lg-block">
-              <a class="nav-link" href="#">
-                <i class="mdi mdi-power"></i>
-              </a>
-            </li>
-            <li class="nav-item nav-settings d-none d-lg-block">
-              <a class="nav-link" href="#">
-                <i class="mdi mdi-format-line-spacing"></i>
               </a>
             </li>
           </ul>
@@ -233,8 +132,8 @@
                     <table class="table table-hover">
                       <thead>
                         <tr>
-                          <th>idPlat</th>
                           <th>Nomplat</th>
+                          <th>typePlat</th>
                           <th>PrixUnitaire</th>
                           <th>ImgPlat</th>
                           <th></th>
@@ -242,22 +141,19 @@
                         </tr>
                       </thead>
                       <tbody>
+                      <?php if(isset($listePlat))
+                            {
+                            foreach ($listePlat as $info) { ?>
                         <tr>
-                          <td>1</td>
-                          <td>Pâte</td>
-                          <td>20000</td>
-                          <td>Pâte.jpg</td>
-                          <td><label class="badge badge-warning">Modifier</label></td>
-                          <td><label class="badge badge-danger">Supprimer</label></td>
+                          <td><?php echo $info['Nomplat']?></td>
+                          <td><?php echo $info['typePlat']?></td>
+                          <td><?php echo $info['PrixUnitaire']?></td>
+                          <td><?php echo $info['ImgPlat']?></td>
+                          <td><a class="badge badge-warning" href="<?php echo base_url(); ?>index.php/admin/modifier_plat?idPlat=<?php echo $info['idPlat']?>">Modifier</a></td>
+                          <td><a class="badge badge-danger" href="<?php echo base_url(); ?>index.php/admin/detail_sugg">Supprimer</a></td>
                         </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>Frite</td>
-                          <td>10000</td>
-                          <td>Frite.jpg</td>
-                          <td><label class="badge badge-warning">Modifier</label></td>
-                          <td><label class="badge badge-danger">Supprimer</label></td>
-                        </tr>
+                        <?php }}?>
+
                       </tbody>
                     </table><br>
             <input class="btn btn-outline-success btn-fw" type="submit" value="Ajouter" />    
@@ -266,6 +162,7 @@
               <i class="mdi mdi-reload btn-icon-prepend"></i> Reset </button>
               <input type="button" value="ajouter"> -->
                   </div>
+
                 </div>
               </form>
 
@@ -546,30 +443,21 @@
                         </tr>
                       </thead>
                       <tbody>
+                      <?php if(isset($listeActivite))
+                            {
+                            foreach ($listeActivite as $info) { ?>
                         <tr>
-                          <td>1</td>
-                          <td>Lorem Ipsum</td>
-                          <td>15</td>
-                          <td>3</td>
-                          <td>5</td>
-                          <td>Courir</td>
-                          <td>2</td>
-                          <!-- <td class="text-danger"> 28.76% <i class="mdi mdi-arrow-down"></i></td> -->
-                          <td><label class="badge badge-warning">Modifier</label></td>
-                          <td><label class="badge badge-danger">Supprimer</label></td>
+                          <td><?php echo $info['idActivite']?></td>
+                          <td><?php echo $info['DescriActivite']?></td>
+                          <td><?php echo $info['Duree']?></td>
+                          <td><?php echo $info['PoidsDeb']?></td>
+                          <td><?php echo $info['PoidsFin']?></td>
+                          <td><?php echo $info['NomActivite']?></td>
+                          <td><?php echo $info['idObjectif']?></td>
+                          <td><a class="badge badge-warning" href="<?php echo base_url(); ?>index.php/admin/modifier_plat?idPlat=<?php echo $info['idPlat']?>">Modifier</a></td>
+                          <td><a class="badge badge-danger" href="<?php echo base_url(); ?>index.php/admin/detail_sugg">Supprimer</a></td>
                         </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>Lorem Ipsum</td>
-                          <td>10</td>
-                          <td>2</td>
-                          <td>4</td>
-                          <td>Marcher</td>
-                          <td>2</td>
-                          <!-- <td class="text-danger"> 28.76% <i class="mdi mdi-arrow-down"></i></td> -->
-                          <td><label class="badge badge-warning">Modifier</label></td>
-                          <td><label class="badge badge-danger">Supprimer</label></td>
-                        </tr>
+                        <?php }}?>
                       </tbody>
                     </table><br>
             <input class="btn btn-outline-success btn-fw" type="submit" value="Ajouter" />    
@@ -598,26 +486,18 @@
                         </tr>
                       </thead>
                       <tbody>
+                      <?php if(isset($listePlat))
+                            {
+                            foreach ($listePlat as $info) { ?>
                         <tr>
-                          <td>Augmenter Poids</td>
-                          <td>Lorem Ipsum</td>
-                          <td>15</td>
-                          <td>3</td>
-                          <td>5</td>
-                          <td>Pâte</td>
-                          <td><label class="badge badge-warning">Modifier</label></td>
-                          <td><label class="badge badge-danger">Supprimer</label></td>
+                          <td><?php echo $info['Nomplat']?></td>
+                          <td><?php echo $info['typePlat']?></td>
+                          <td><?php echo $info['PrixUnitaire']?></td>
+                          <td><?php echo $info['ImgPlat']?></td>
+                          <td><a class="badge badge-warning" href="<?php echo base_url(); ?>index.php/admin/modifier_plat?idPlat=<?php echo $info['idPlat']?>">Modifier</a></td>
+                          <td><a class="badge badge-danger" href="<?php echo base_url(); ?>index.php/admin/detail_sugg">Supprimer</a></td>
                         </tr>
-                        <tr>
-                          <td>Augmenter Poids</td>
-                          <td>Lorem Ipsum</td>
-                          <td>10</td>
-                          <td>2</td>
-                          <td>4</td>
-                          <td>Frite</td>
-                          <td><label class="badge badge-warning">Modifier</label></td>
-                          <td><label class="badge badge-danger">Supprimer</label></td>
-                        </tr>
+                        <?php }}?>
                       </tbody>
                     </table><br>
             <input class="btn btn-outline-success btn-fw" type="submit" value="Ajouter" />    
