@@ -213,7 +213,6 @@ JOIN Objectif o on o.idObjectif = i.idObjectif
 -- SELECT 
 -- FROM 
 
-
 ------- view regime rehetra
 CREATE OR REPLACE VIEW v_all_regime AS 
 select r.idObjectif, o.TypeObjectif, r.idRegime, r.DescriRegime, r.PoidsDeb, r.PoidsFin, c.idPlat, p.Nomplat, p.PrixUnitaire, c.duree, p.typePlat, c.idComposition
@@ -223,7 +222,7 @@ join Plat p on p.idPlat=c.idPlat
 join Objectif o on r.idObjectif=o.idObjectif
 
 ------- get regime suggestions
-select idregime, DescriRegime, PoidsDeb, PoidsFin,sum(duree),sum(PrixUnitaire*duree)
+select idregime, DescriRegime, PoidsDeb, PoidsFin,sum(duree) total_duree,sum(PrixUnitaire*duree) total_prix
 from v_all_regime
 where idObjectif=1 and PoidsDeb <= 3 and PoidsFin >= 3
 group by idregime, DescriRegime, PoidsDeb, PoidsFin
@@ -232,6 +231,7 @@ group by idregime, DescriRegime, PoidsDeb, PoidsFin
 select * 
 from v_all_regime
 where idObjectif=1 and PoidsDeb <= 3 and PoidsFin >= 3 and idRegime=1
+<<<<<<< Updated upstream
 
 -- view get infos_user by idUser
 CREATE OR REPLACE VIEW v_infos_user_by_id AS 
@@ -239,3 +239,5 @@ SELECT u.idUser, u.NomUser, o.TypeObjectif, i.PoidsInit, i.PoidsObj, i.Taille
 FROM InfoUser i 
 JOIN User u on u.idUser = i.idUser
 JOIN Objectif o on o.idObjectif = i.idObjectif;
+=======
+>>>>>>> Stashed changes
