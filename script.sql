@@ -55,7 +55,7 @@ VALUES
     (7,"Feminin",165,90.5,70,2,0),
     (8,"Feminin",170,70,80,1,1);
 
-CREATE table PLat
+CREATE table Plat
 (
     idPlat Integer PRIMARY KEY NOT NULL auto_increment,
     Nomplat VARCHAR(50),
@@ -63,7 +63,7 @@ CREATE table PLat
     PrixUnitaire Integer,
     ImgPlat VARCHAR(50)
 );
-INSERT INTO PLat (Nomplat,typePlat,PrixUnitaire,ImgPlat) 
+INSERT INTO Plat (Nomplat,typePlat,PrixUnitaire,ImgPlat) 
 VALUES 
     ("Pate","glucide",20000,"Pate.jpg"),
     ("Frite","glucide",10000,"Frite.jpg"),
@@ -208,6 +208,26 @@ from User u
 JOIN InfoUser i on i.idUser=u.idUser 
 );
 
-CREATE OR REPLACE VIEW v_ AS 
-SELECT 
-FROM 
+-- CREATE OR REPLACE VIEW v_ AS 
+-- SELECT 
+-- FROM 
+
+
+------- view regime rehetra
+CREATE OR REPLACE VIEW v_all_regime AS 
+select r.idObjectif, o.TypeObjectif, r.idRegime, r.DescriRegime, r.PoidsDeb, r.PoidsFin, c.idPlat, p.Nomplat, p.PrixUnitaire, c.duree, p.typePlat, c.idComposition
+from regime r 
+join composition c on r.idRegime=c.idRegime
+join Plat p on p.idPlat=c.idPlat
+join Objectif o on r.idObjectif=o.idObjectif
+
+------- get regime suggestions
+select idregime, DescriRegime, PoidsDeb, PoidsFin,sum(duree),sum(PrixUnitaire*duree)
+from v_all_regime
+where idObjectif=1 and PoidsDeb <= 3 and PoidsFin >= 3
+group by idregime, DescriRegime, PoidsDeb, PoidsFin
+
+------- get details regime suggestions
+select * 
+from v_all_regime
+where idObjectif=1 and PoidsDeb <= 3 and PoidsFin >= 3 and idRegime=1
