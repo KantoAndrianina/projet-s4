@@ -87,7 +87,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url(); ?>index.php/user/porte_monnaie?idUser=<?php echo $listInfoUser[0]['idUser']?>x">
+              <a class="nav-link" href="<?php echo base_url(); ?>index.php/user/porte_monnaie?idUser=<?php echo $listInfoUser[0]['idUser']?>">
                 <span class="menu-title">Change purse</span>
                 <i class="mdi mdi-coin menu-icon"></i>
               </a>

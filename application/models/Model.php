@@ -95,7 +95,7 @@
         }
         public function getInfoUserById($id)
         {   
-            $sql = "select * from infoUser where idUser = %s";
+            $sql = "select * from InfoUser where idUser = %s";
             $sql = sprintf($sql,$id);
             $query = $this->db->query($sql);
             $result = array();
@@ -121,7 +121,7 @@
         }
         public function getPlat()
         {   
-            $sql = "select * from plat ";
+            $sql = "select * from Plat ";
             $query = $this->db->query($sql);
             $result = array();
 
@@ -133,7 +133,7 @@
         }
         public function getAllActivite()
         {   
-            $sql = "select * from activite ";
+            $sql = "select * from Activite ";
             $query = $this->db->query($sql);
             $result = array();
 
@@ -145,7 +145,7 @@
         }
         public function getAllRegime()
         {   
-            $sql = "select * from regime ";
+            $sql = "select * from Regime ";
             $query = $this->db->query($sql);
             $result = array();
 
@@ -172,7 +172,7 @@
         }
         public function getObjectifById($idObjectif)
         {   
-            $sql = "select typeObjectif from objectif where idObjectif = %s";
+            $sql = "select typeObjectif from Objectif where idObjectif = %s";
             $sql = sprintf($sql,$idObjectif);
             $query = $this->db->query($sql);
             $row=$query->row_array();

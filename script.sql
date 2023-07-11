@@ -59,7 +59,7 @@ CREATE table Plat
 (
     idPlat Integer PRIMARY KEY NOT NULL auto_increment,
     Nomplat VARCHAR(50),
-    typePlat VARCHAR(50),
+    typePlat VARCHAR(50), 
     PrixUnitaire Integer,
     ImgPlat VARCHAR(50)
 );
@@ -215,6 +215,12 @@ from User u
 JOIN InfoUser i on i.idUser=u.idUser
 JOIN Objectif o on o.idObjectif = i.idObjectif
 );
+
+CREATE OR REPLACE VIEW v_user_info AS 
+select u.idUser, u.nomuser, u.prenom, u.email, u.mdp, i.Genre, i.Taille, i.PoidsInit, i.PoidsObj, i.idObjectif, i.isGold
+from  User u 
+join infouser i on i.idUser=u.idUser;
+
 
 -- CREATE OR REPLACE VIEW v_ AS 
 -- SELECT 
