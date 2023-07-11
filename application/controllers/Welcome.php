@@ -44,17 +44,17 @@ class Welcome extends CI_Controller {
 
 		if($this->Model->checkLogin($mail,$pass))
 		{
-			$this->session->set_userdata('idUser',10);
-			$idUser =  $this->session->userdata('idUser');
-			$data['idUser'] = $idUser;
+			$idUser=$this->Model->getUserByMail($mail);
+			// $this->session->set_userdata('idUser',$idUser);
 			// $this->session->set_userdata('Email', $mail);
-			// $_SESSION['Email']=$mail;
+			// $_SESSION['idUser']=$idUser;
+			// var_dump($_SESSION['idUser']);
 			if($this->Model->checkAdmin($mail))
 			{
-				$url=base_url().'index.php/admin/index';
+				$url=base_url().'index.php/admin/index?idUser='.$idUser;
 				redirect($url);
 			}else{
-				$url=base_url().'index.php/user/index';
+				$url=base_url().'index.php/user/index?idUser='.$idUser;
 				redirect($url);
 			}
 			

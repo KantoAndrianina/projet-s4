@@ -88,14 +88,27 @@
         public function getUserByMail($mail)
         {   
             $sql = "select idUser from User where Email = '%s'";
-            $sql = sprintf($sql,$id);
-            $query = $this->db->query($mail);
+            $sql = sprintf($sql,$mail);
+            $query = $this->db->query($sql);
             $row=$query->row_array();
             return $row['idUser'];
         }
         public function getInfoUserById($id)
         {   
             $sql = "select * from infoUser where idUser = %s";
+            $sql = sprintf($sql,$id);
+            $query = $this->db->query($sql);
+            $result = array();
+
+            foreach($query->result_array() as $row)
+            {
+            $result[] = $row;
+            }
+            return $result;
+        }
+        public function getUserInfoById($id)
+        {   
+            $sql = "select * from v_user_info where idUser = %s";
             $sql = sprintf($sql,$id);
             $query = $this->db->query($sql);
             $result = array();

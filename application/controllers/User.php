@@ -20,8 +20,9 @@ class User extends CI_Controller
     public function index()
 	{
 		$data = array();
+		$idUser = $_GET['idUser'];
 		$data['content'] = 'pages/user';
-		$data['listInfoUser'] = $this->Model->getInfoUserById(4);
+		$data['listInfoUser'] = $this->Model->getUserInfoById($idUser);
 		$this->load->view('index',$data);
 	}
     public function porte_monnaie()
