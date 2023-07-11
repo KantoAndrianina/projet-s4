@@ -81,13 +81,13 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url(); ?>index.php/user/index">
+              <a class="nav-link" href="<?php echo base_url(); ?>index.php/user/index?idUser=<?php echo $listInfoUser[0]['idUser']?>">
                 <span class="menu-title">Accueil</span>
                 <i class="mdi mdi-home menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url(); ?>index.php/user/porte_monnaie">
+              <a class="nav-link" href="<?php echo base_url(); ?>index.php/user/porte_monnaie?idUser=<?php echo $listInfoUser[0]['idUser']?>">
                 <span class="menu-title">Change purse</span>
                 <i class="mdi mdi-coin menu-icon"></i>
               </a>
@@ -104,7 +104,7 @@
         <div class="main-panel">
           <div class="content-wrapper">
             <div class="page-header">
-              <h3 class="page-title"> Objectif : Augmenter le poids</h3>
+              <h3 class="page-title"> Objectif : <?php echo $nomObjectif?></h3>
             </div>
             <div class="row">
               <div class="col-md-12 grid-margin">
@@ -112,9 +112,14 @@
                   <div class="card-body">
                     <div class="row">
                       <div class="col-md-6">
-                        <p>Poids goal : ... KG</p>
-                        <p>Poids actuel : ... KG</p>
-                        <p>Taille : ... CM</p>
+                      <?php if(isset($listInfoUser))
+                            {
+                            foreach ($listInfoUser as $info) { ?>
+                        <p>Poids actuel : <?php echo $info['PoidsObj']?> KG</p>
+                        <p>Poids goal : <?php echo $info['PoidsInit']?> KG</p>
+                        <p>Taille : <?php echo $info['Taille']?> CM</p>
+                        <?php }} ?>
+
                       </div>
                     </div>
                   </div>
@@ -148,7 +153,7 @@
                           <td>15 jours</td>
                           <td class="text-success"> Entre 3 et 5 KG <i class="mdi mdi-arrow-up"></i></td>
                           <td>140 000 Ar</td>
-                          <td><a class="badge badge-warning" href="<?php echo base_url(); ?>index.php/user/detail_sugg">details</a></td>
+                          <td><a class="badge badge-warning" href="<?php echo base_url(); ?>index.php/user/detail_sugg?idUser=<?php echo $listInfoUser[0]['idUser']?>">details</a></td>
                           <td><a class="badge badge-info" href="#">choisir</a></td>
 
                         </tr>

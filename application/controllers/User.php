@@ -31,12 +31,16 @@ class User extends CI_Controller
     public function porte_monnaie()
 	{
 		$data = array();
+		$idUser = $_GET['idUser'];
+		$data['listInfoUser'] = $this->Model->getUserInfoById($idUser);
         $data['content'] = 'pages/porte_monnaie';
 		$this->load->view('index',$data);
 	}
     public function detail_sugg()
 	{
 		$data = array();
+		$idUser = $_GET['idUser'];
+		$data['listInfoUser'] = $this->Model->getUserInfoById($idUser);
         $data['content'] = 'pages/detail_suggestion';
 		$this->load->view('index',$data);
 	}

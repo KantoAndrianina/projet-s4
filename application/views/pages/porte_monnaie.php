@@ -81,13 +81,13 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url(); ?>index.php/user/index">
+              <a class="nav-link" href="<?php echo base_url(); ?>index.php/user/index?idUser=<?php echo $listInfoUser[0]['idUser']?>">
                 <span class="menu-title">Accueil</span>
                 <i class="mdi mdi-home menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url(); ?>index.php/user/porte_monnaie">
+              <a class="nav-link" href="<?php echo base_url(); ?>index.php/user/porte_monnaie?idUser=<?php echo $listInfoUser[0]['idUser']?>">
                 <span class="menu-title">Change purse</span>
                 <i class="mdi mdi-coin menu-icon"></i>
               </a>
