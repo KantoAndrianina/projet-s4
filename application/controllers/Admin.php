@@ -28,5 +28,22 @@ class Admin extends CI_Controller
         $data['content'] = 'crud/ajout_plats';
 		$this->load->view('index',$data);
 	}
-    
+	public function crud_liste()
+	{
+		$data = array();
+        $data['content'] = 'crud/listes';
+		$this->load->view('index',$data);
+	}
+	public function crud_activite()
+	{
+		$data = array();
+        $data['content'] = 'crud/ajout_activites';
+		$this->load->view('index',$data);
+	}
+	public function crud_regime()
+	{
+		$data = array();
+        $data['content'] = 'crud/ajout_regimes';
+		$this->load->view('index',$data);
+	}
 }
