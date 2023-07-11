@@ -40,7 +40,7 @@
                   <div class="mt-3">
                     <input type="submit" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" value="SIGN IN">
                   </div>
-                  <div class="text-center mt-4 font-weight-light"> Don't have an account? <a href="#" class="text-primary">Create</a>
+                  <div class="text-center mt-4 font-weight-light"> Don't have an account? <a href="<?php echo base_url();?>index.php/welcome/inscription" class="text-primary">Create</a>
                   </div>
                 </form>
               </div>

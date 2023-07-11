@@ -57,4 +57,10 @@ class Welcome extends CI_Controller {
 			
 		}
 	}
+	public function inscription()
+	{
+        $data['content'] = 'pages/inscription';
+		$this->load->view('index',$data);
+		
+	}
 }
