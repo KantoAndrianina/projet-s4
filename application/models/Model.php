@@ -72,6 +72,40 @@
             }
             return $result;
         }
+        public function getUserById($id)
+        {   
+            $sql = "select * from User where idUser = %s";
+            $sql = sprintf($sql,$id);
+            $query = $this->db->query($sql);
+            $result = array();
+
+            foreach($query->result_array() as $row)
+            {
+            $result[] = $row;
+            }
+            return $result;
+        }
+        public function getUserByMail($mail)
+        {   
+            $sql = "select idUser from User where Email = '%s'";
+            $sql = sprintf($sql,$id);
+            $query = $this->db->query($mail);
+            $row=$query->row_array();
+            return $row['idUser'];
+        }
+        public function getInfoUserById($id)
+        {   
+            $sql = "select * from infoUser where idUser = %s";
+            $sql = sprintf($sql,$id);
+            $query = $this->db->query($sql);
+            $result = array();
+
+            foreach($query->result_array() as $row)
+            {
+            $result[] = $row;
+            }
+            return $result;
+        }
         public function getPlat()
         {   
             $sql = "select * from plat ";
@@ -115,6 +149,31 @@
             $query = $this->db->query($sql);
 
         }
+        public function getObjectifByUser($idUser)
+        {   
+            $sql = "select idObjectif from InfoUser where idUser = %s";
+            $sql = sprintf($sql,$idUser);
+            $query = $this->db->query($sql);
+            $row=$query->row_array();
+            return $row['idObjectif'];
+        }
+
+        public function getSuggestion($idUser)
+        {   
+            $poidsDiff= $this->Model->getPoidsDiff($idUser);
+            $objectif= $this->Model->getObjectifByUser($idUser);
+            $sql = "select idregime, DescriRegime, PoidsDeb, PoidsFin,sum(duree) total_duree,sum(PrixUnitaire*duree) total_prix from v_all_regime where idObjectif=%s and PoidsDeb <= %s and PoidsFin >= %s group by idregime, DescriRegime, PoidsDeb, PoidsFin";
+            $sql = sprintf($sql,$objectif,$poidsDiff,$poidsDiff);
+            $query = $this->db->query($sql);
+            $result = array();
+
+            foreach($query->result_array() as $row)
+            {
+            $result[] = $row;
+            }
+            return $result;
+        }
+
         //insert Activite
         public function insertActivite($idActivite, $DescriActivite, $Duree,$PoidsDeb,$PoidsFin,$NomActivite,$idObjectif)
         {

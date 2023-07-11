@@ -44,7 +44,7 @@
                 </div>
                 <div class="nav-profile-text">
                     
-                    <p class="mb-1 text-black"><?= $idUser ?></p>
+                    <p class="mb-1 text-black">yes</p>
                   
                 </div>
               </a>
